@@ -3,7 +3,7 @@ services:
     name: n8n-automation-server
     plan: free
     runtime: docker
-    dockerfile_path: Dockerfile # Tells Render to use the default root configuration
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: DB_TYPE
         value: postgresdb
