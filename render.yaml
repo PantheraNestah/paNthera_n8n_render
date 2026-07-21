@@ -1,15 +1,15 @@
 services:
   - type: web
     name: n8n-automation-server
-    runtime: docker
-    repo: https://github.com # Pulls official code directly
     plan: free
+    runtime: docker
+    dockerfile_path: Dockerfile # Tells Render to use the default root configuration
     envVars:
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_CONNECTION_STRING
-        value: postgres://user:pass@host:port/db # We will overwrite this in the dashboard
+        value: "postgres://user:pass@host:port/db"
       - key: N8N_ENCRYPTION_KEY
-        generateValue: true # Generates a secure random key automatically
+        generateValue: true
       - key: N8N_PORT
-        value: 10000
+        value: "10000"
