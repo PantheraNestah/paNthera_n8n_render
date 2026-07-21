@@ -8,8 +8,8 @@ services:
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_CONNECTION_STRING
-        value: "postgres://user:pass@host:port/db"
+        sync: false # Tells Render NOT to overwrite this from GitHub
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
-      - key: N8N_PORT
-        value: "10000"
+      - key: PORT
+        value: 10000
