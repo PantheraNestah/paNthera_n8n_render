@@ -7,8 +7,18 @@ services:
     envVars:
       - key: DB_TYPE
         value: postgresdb
-      - key: DB_POSTGRESDB_CONNECTION_STRING
-        sync: false # Tells Render NOT to overwrite this from GitHub
+      - key: DB_POSTGRESDB_HOST
+        sync: false
+      - key: DB_POSTGRESDB_PORT
+        value: 5432
+      - key: DB_POSTGRESDB_DATABASE
+        sync: false
+      - key: DB_POSTGRESDB_USER
+        sync: false
+      - key: DB_POSTGRESDB_PASSWORD
+        sync: false
+      - key: DB_POSTGRESDB_SSL_ENABLED
+        value: true
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
       - key: PORT
